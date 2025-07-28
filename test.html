@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <script>
-      fetch("https://graphql.instagram.com", {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          query: "query { me { id username } }"
-        })
-      })
-      .then(res => res.text())
-      .then(console.log);
-    </script>
-  </body>
+<head>
+  <title>Redirect Demo</title>
+</head>
+<body>
+  <h1>Open Redirect PoC</h1>
+  <p id="info">Analyzing your redirect...</p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("token");
+
+    if (token) {
+      document.getElementById("info").innerText = "Token parameter detected: " + token;
+    } else {
+      document.getElementById("info").innerText = "No token found in URL.";
+    }
+
+    // Simulate logging without actually sending anything
+    console.log("Received redirect with full URL:", window.location.href);
+  </script>
+</body>
 </html>
